@@ -318,11 +318,12 @@ option:hover {
 }
 
 /* ------------------------------------------------------------
-   SETTINGS ACTION BUTTONS (BOTTOM)
+   SETTINGS ACTION BUTTONS
 ------------------------------------------------------------ */
-#settingsDownloadBottom,
-#settingsLoadOpen {
-  width: 100%;
+.settings-actions {
+  display: flex;
+  justify-content: left;
+  gap: 10px;   
   margin-top: 10px;
 }
 
@@ -332,7 +333,7 @@ option:hover {
 .cassette-controls {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 12px;
   margin-top: 18px;
 }
 
