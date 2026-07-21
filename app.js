@@ -744,7 +744,6 @@ function downloadSettingsJson() {
 
 settingsDownloadBottom.addEventListener("click", downloadSettingsJson);
 
-
 // ------------------------------------------------------------
 // SETTINGS LOAD OVERLAY (DSP LIST)
 // ------------------------------------------------------------
