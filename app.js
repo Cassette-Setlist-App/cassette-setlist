@@ -252,7 +252,6 @@ dropZone.addEventListener("drop", async (e) => {
   await loadFolderFiles(files);
 });
 
-
 async function loadFolderFiles(files) {
   trackList = [];
   currentTrackIndex = -1;
@@ -371,7 +370,6 @@ function updateTrackActiveState() {
     li.classList.toggle("active", idx === currentTrackIndex);
   });
 }
-
 
 // ------------------------------------------------------------
 // PLAYBACK
