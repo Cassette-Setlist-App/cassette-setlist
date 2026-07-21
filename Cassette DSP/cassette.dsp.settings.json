@@ -119,20 +119,22 @@
 {
   "baseParams": {
     "hiss": 0.02,
-    "saturation": 0.5,
-    "wowFlutter": 1,
-    "softBass": 0.79,
-    "tone": 0.4
+    "saturation": 0.38,
+    "wowFlutter": 0.26,
+    "softBass": 0.54,
+    "tone": 0.35
   },
-  "walkmanParams": {
-    "highBass": 0.48,
-    "presence": 0.25
+  "settings2Params": {
+    "highBass": 0.12,
+    "presence": 0.05
   },
-  "boomboxParams": {
-    "lowBass": 0.7,
-    "punch": 0.5,
-    "bodyBoost": 0.5
-  }
+  "settings3Params": {
+    "lowBass": 0.06,
+    "punch": 0.02,
+    "bodyBoost": 0
+  },
+  "settings2Enabled": true,
+  "settings3Enabled": true
 }  } 
 , 
   { 
