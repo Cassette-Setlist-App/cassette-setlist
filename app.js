@@ -235,15 +235,24 @@ dropZone.addEventListener("drop", async (e) => {
   dropZone.classList.remove("dragover");
   initAudio();
 
-  const files = Array.from(e.dataTransfer.files).filter((f) =>
-    ["audio/mpeg", "audio/wav", "audio/x-wav", "audio/aiff", "audio/x-aiff"].includes(f.type)
+  let files = Array.from(e.dataTransfer.files).filter((f) =>
+    [
+      "audio/mpeg",     
+      "audio/wav",     
+      "audio/x-wav",
+      "audio/aiff",     
+      "audio/x-aiff",
+      "audio/flac",  
+      "audio/x-flac"
+    ].includes(f.type)
   );
+
+  files.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+
   await loadFolderFiles(files);
 });
 
-// ------------------------------------------------------------
-// LOAD FOLDER FILES
-// ------------------------------------------------------------
+
 async function loadFolderFiles(files) {
   trackList = [];
   currentTrackIndex = -1;
@@ -258,9 +267,14 @@ async function loadFolderFiles(files) {
   let totalTapeLength = 0;
 
   for (const file of files) {
+
+    if (!file.name.match(/\.(mp3|wav|aif|aiff|flac)$/i)) continue;
+
     const url = URL.createObjectURL(file);
+
     const duration = await getFileDuration(url);
-    const cleanName = file.name.replace(/\.(mp3|wav|aiff)$/i, "");
+
+    const cleanName = file.name.replace(/\.(mp3|wav|aif|aiff|flac)$/i, "");
 
     trackList.push({ name: cleanName, url, duration });
 
@@ -811,6 +825,7 @@ settingsDSPList.addEventListener("change", () => {
 
   if (cassetteEnabled) startWowFlutter();
 });
+
 
 
 // ------------------------------------------------------------
