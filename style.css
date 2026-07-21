@@ -1,0 +1,495 @@
+/* ------------------------------------------------------------
+   GLOBAL APP STYLE
+------------------------------------------------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  background: #050509;
+  color: #e0e0e0;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ------------------------------------------------------------
+   TOP BAR
+------------------------------------------------------------ */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  background: #0a0a0f;
+  border-bottom: 1px solid #222;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+}
+
+.top-bar button {
+  background: #111;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.top-bar button:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 10px #0ff;
+}
+
+#cassetteDspToggle.on {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 15px #0ff;
+}
+
+/* ------------------------------------------------------------
+   MAIN LAYOUT
+------------------------------------------------------------ */
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   SETLIST PANEL
+------------------------------------------------------------ */
+.setlist-panel {
+  width: 360px;
+  background: #0a0a0f;
+  border-left: 1px solid #222;
+  padding: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.drop-zone {
+  width: 100%;
+  height: 120px;
+  background: #111;
+  border: 2px dashed #0ff;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.drop-zone.dragover {
+  background: #0ff;
+  border-color: #000;
+  box-shadow: 0 0 20px #0ff;
+}
+
+.track-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.track-list li {
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  background: #111;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-list li:hover {
+  background: #0ff;
+  color: #000;
+}
+
+.track-list li.active {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* ------------------------------------------------------------
+   FOOTER PLAYER
+------------------------------------------------------------ */
+.app-footer {
+  padding: 10px 20px;
+  background: #0a0a0f;
+  border-top: 1px solid #222;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #111;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #0ff;
+  width: 0%;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.time-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ------------------------------------------------------------
+   SETTINGS OVERLAY
+------------------------------------------------------------ */
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.settings-overlay.hidden {
+  display: none;
+}
+
+.settings-content {
+  width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #0a0a0f;
+  border: 1px solid #0ff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px #0ff;
+}
+
+.settings-close-x {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+  color: #0ff;
+}
+
+/* ------------------------------------------------------------
+   SETTINGS SECTIONS
+------------------------------------------------------------ */
+.settings-section {
+  margin-bottom: 24px;
+}
+
+.settings-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0ff;
+}
+
+.settings-section h3 input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------
+   SLIDERS
+------------------------------------------------------------ */
+input[type="range"] {
+  width: 100%;
+  height: 4px;
+  background: #111;
+  border-radius: 4px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #0ff;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------
+   SCROLLBAR
+------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00aaff;
+}
+
+/* ------------------------------------------------------------
+   BUTTONS — GLOBAL FUTURISTIC STYLE
+------------------------------------------------------------ */
+button {
+  background: #111;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 12px #0ff;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 18px #0ff;
+}
+
+/* ------------------------------------------------------------
+   LISTBOX (SELECT) — FUTURISTIC MINIMALIST
+------------------------------------------------------------ */
+select {
+  width: 100%;
+  background: #111;
+  color: #0ff;
+  border: 1px solid #0ff;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 14px;
+  outline: none;
+  box-shadow: 0 0 10px #0ff;
+}
+
+select:focus {
+  box-shadow: 0 0 15px #0ff;
+}
+
+option {
+  background: #111;
+  color: #0ff;
+  padding: 6px;
+  border: none;
+}
+
+option:hover {
+  background: #0ff;
+  color: #000;
+}
+
+/* ------------------------------------------------------------
+   SETTINGS ACTION BUTTONS (BOTTOM)
+------------------------------------------------------------ */
+#settingsDownloadBottom,
+#settingsLoadOpen {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ------------------------------------------------------------
+   FUTURISTIC MINIMALIST SVG BUTTONS
+------------------------------------------------------------ */
+.cassette-controls {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.cassette-btn {
+  background: #0a0a0f;
+  border: 1px solid #0ff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cassette-btn:hover svg {
+  stroke: #000;
+  filter: drop-shadow(0 0 4px #00ffff);
+}
+
+
+.cassette-btn:active {
+  transform: scale(0.92);
+  box-shadow: 0 0 18px #0ff;
+}
+
+.cassette-btn svg {
+  stroke: #0ff;
+  fill: none;
+  stroke-width: 2;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   DROP ZONE INNER + CASSETTE SVG
+------------------------------------------------------------ */
+
+.dropzone-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* keeps drag events on parent */
+}
+
+.cassette-svg {
+  opacity: 0.35;
+  margin-bottom: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.drop-zone:hover .cassette-svg {
+  opacity: 0.55;
+}
+
+.drop-zone.dragover .cassette-svg {
+  opacity: 0.9;
+}
+
+/* SVG color mapping */
+.cassette-svg svg .svg-body {
+  fill: #111;
+  stroke: #0ff;
+  stroke-width: 2;
+}
+
+.cassette-svg svg .svg-label {
+  fill: #222;
+  stroke: #0ff;
+  stroke-width: 1;
+}
+
+.cassette-svg svg .svg-center {
+  fill: #000;
+}
+
+.cassette-svg svg .svg-reel {
+  fill: #000;
+  stroke: #0ff;
+  stroke-width: 1.5;
+}
+
+.cassette-svg svg .svg-reel-center {
+  fill: #0ff;
+}
+
+.cassette-svg svg .svg-screw {
+  fill: #0ff;
+}
+
+/* ------------------------------------------------------------
+   DROP ZONE HINT TEXT
+------------------------------------------------------------ */
+.drop-hint {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  opacity: 0.7;
+  user-select: none;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.drop-zone:hover .drop-hint,
+.drop-zone.dragover .drop-hint {
+  opacity: 1;
+  color: #000;
+}
+
+/* ------------------------------------------------------------
+   DROP ZONE WITH CASSETTE SVG (NORMAL STATE)
+------------------------------------------------------------ */
+.drop-zone {
+  position: relative;
+  background: #111;
+  border: 2px dashed #0ff;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  /* Neon cyan cassette */
+  background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'>\
+      <rect x='25' y='20' width='150' height='80' rx='8' stroke='%2300ffff' fill='none' stroke-width='3'/>\
+      <rect x='90' y='52' width='20' height='16' rx='3' stroke='%2300ffff' fill='none' stroke-width='2'/>\
+      <circle cx='70' cy='60' r='20' stroke='%2300ffff' fill='none' stroke-width='3'/>\
+      <circle cx='130' cy='60' r='20' stroke='%2300ffff' fill='none' stroke-width='3'/>\
+      <circle cx='65' cy='95' r='4' fill='%2300ffff'/>\
+      <circle cx='100' cy='95' r='4' fill='%2300ffff'/>\
+      <circle cx='135' cy='95' r='4' fill='%2300ffff'/>\
+    </svg>");
+  background-repeat: no-repeat;
+  background-position: center 12px;
+  background-size: 130px;
+}
+
+/* ------------------------------------------------------------
+   HOVER / DRAGOVER: GLOW + BLACK ICON + BLACK TEXT
+------------------------------------------------------------ */
+.drop-zone:hover,
+.drop-zone.dragover {
+  background-color: #0ff;
+  border-color: #000;
+  box-shadow: 0 0 25px #0ff;
+
+  /* Same cassette, but black instead of cyan */
+  background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'>\
+      <rect x='25' y='20' width='150' height='80' rx='8' stroke='%23000000' fill='none' stroke-width='3'/>\
+      <rect x='90' y='52' width='20' height='16' rx='3' stroke='%23000000' fill='none' stroke-width='2'/>\
+      <circle cx='70' cy='60' r='20' stroke='%23000000' fill='none' stroke-width='3'/>\
+      <circle cx='130' cy='60' r='20' stroke='%23000000' fill='none' stroke-width='3'/>\
+      <circle cx='65' cy='95' r='4' fill='%23000000'/>\
+      <circle cx='100' cy='95' r='4' fill='%23000000'/>\
+      <circle cx='135' cy='95' r='4' fill='%23000000'/>\
+    </svg>");
+}

@@ -1,0 +1,228 @@
+[ 
+  { 
+    "name": "cassette.dsp 1", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.5,
+    "wowFlutter": 0.25,
+    "softBass": 0.5,
+    "tone": 0.4
+  },
+  "walkmanParams": {
+    "highBass": 0.48,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.7,
+    "punch": 0.5,
+    "bodyBoost": 0.5
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 10", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.24,
+    "wowFlutter": 0.27,
+    "softBass": 1,
+    "tone": 0.25
+  },
+  "settings2Params": {
+    "highBass": 0.15,
+    "presence": 0.29
+  },
+  "settings3Params": {
+    "lowBass": 0.08,
+    "punch": 0.44,
+    "bodyBoost": 0
+  },
+  "settings2Enabled": true,
+  "settings3Enabled": true
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 2", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.5,
+    "wowFlutter": 0.25,
+    "softBass": 0.5,
+    "tone": 0.4
+  },
+  "walkmanParams": {
+    "highBass": 0.48,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.7,
+    "punch": 0.5,
+    "bodyBoost": 0.5
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 3", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.5,
+    "wowFlutter": 0.25,
+    "softBass": 0.5,
+    "tone": 0.4
+  },
+  "walkmanParams": {
+    "highBass": 0.48,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.57,
+    "punch": 1,
+    "bodyBoost": 0.5,
+    "tone": 0.43
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 4", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.38,
+    "wowFlutter": 0.68,
+    "softBass": 0.51,
+    "tone": 0.49
+  },
+  "walkmanParams": {
+    "highBass": 1,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.7,
+    "punch": 0.5,
+    "bodyBoost": 0.5,
+    "tone": 0.5
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 5", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.5,
+    "wowFlutter": 1,
+    "softBass": 0.79,
+    "tone": 0.4
+  },
+  "walkmanParams": {
+    "highBass": 0.48,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.7,
+    "punch": 0.5,
+    "bodyBoost": 0.5
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 6", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.46,
+    "wowFlutter": 0.72,
+    "softBass": 0.5,
+    "tone": 0.4
+  },
+  "walkmanParams": {
+    "highBass": 0.85,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.77,
+    "punch": 0.38,
+    "bodyBoost": 0.5,
+    "tone": 0.72
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 7", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.5,
+    "wowFlutter": 0.41,
+    "softBass": 0.79,
+    "tone": 0.4
+  },
+  "walkmanParams": {
+    "highBass": 0.48,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.7,
+    "punch": 0.5,
+    "bodyBoost": 0.5
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 8", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.38,
+    "wowFlutter": 0.26,
+    "softBass": 0.76,
+    "tone": 0.57
+  },
+  "walkmanParams": {
+    "highBass": 0.48,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.7,
+    "punch": 0.5,
+    "bodyBoost": 0.5
+  }
+}  } 
+, 
+  { 
+    "name": "cassette.dsp 9", 
+    "data": 
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.5,
+    "wowFlutter": 0.25,
+    "softBass": 0.5,
+    "tone": 0.4
+  },
+  "settings2Params": {
+    "highBass": 1,
+    "presence": 1
+  },
+  "settings3Params": {
+    "lowBass": 0.22,
+    "punch": 0.14,
+    "bodyBoost": 0.06
+  },
+  "settings2Enabled": false,
+  "settings3Enabled": true
+}  } 
+] 

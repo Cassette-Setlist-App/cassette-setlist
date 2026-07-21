@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cassette-Setlist</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cassette.ui.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <button id="cassetteDspToggle">Cassette DSP</button>
+      <button id="settingsToggle">Settings</button>
+    </div>
+
+    <!-- MAIN -->
+    <main class="app-main">
+
+      <!-- LEFT: Cassette Visual -->
+      <section id="cassettePanel" class="cassette-panel">
+        <div class="cassette-body">
+
+          <!-- Cassette Window -->
+          <div class="cassette-window">
+            <div class="gear gear-left">
+              <div class="gear-inner"></div>
+              <div class="tape tape-left"></div>
+            </div>
+
+            <div class="gear gear-right">
+              <div class="gear-inner"></div>
+              <div class="tape tape-right"></div>
+            </div>
+          </div>
+
+          <!-- Cassette Controls -->
+          <div class="cassette-controls">
+
+            <!-- PREV -->
+            <button id="prevHold" class="cassette-btn">
+              <svg width="26" height="26" viewBox="0 0 24 24">
+                <polyline points="15 5 8 12 15 19"></polyline>
+                <polyline points="10 5 3 12 10 19"></polyline>
+              </svg>
+            </button>
+
+            <!-- PLAY / PAUSE -->
+            <button id="playPause" class="cassette-btn">
+              <svg id="playIcon" width="26" height="26" viewBox="0 0 24 24">
+                <polygon points="8 6 18 12 8 18"></polygon>
+              </svg>
+              <svg id="pauseIcon" width="26" height="26" viewBox="0 0 24 24" style="display:none;">
+                <line x1="9" y1="5" x2="9" y2="19"></line>
+                <line x1="15" y1="5" x2="15" y2="19"></line>
+              </svg>
+            </button>
+
+            <!-- NEXT -->
+            <button id="nextHold" class="cassette-btn">
+              <svg width="26" height="26" viewBox="0 0 24 24">
+                <polyline points="6 5 13 12 6 19"></polyline>
+                <polyline points="11 5 18 12 11 19"></polyline>
+              </svg>
+            </button>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- RIGHT: Setlist Panel -->
+      <section id="setlistPanel" class="setlist-panel">
+        
+        <!-- Drop Zone (SVG loaded from CSS only) -->
+        <div id="dropZone" class="drop-zone">
+          <p class="drop-hint">Load cassette</p>
+        </div>
+
+        <input type="file" id="folderInput" webkitdirectory multiple style="display:none" />
+
+        <ul id="trackList" class="track-list"></ul>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <div class="progress-container">
+        <div id="progressBar" class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <span id="timeLabel" class="time-label">00:00 / 00:00</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- SETTINGS OVERLAY -->
+  <div id="settingsOverlay" class="settings-overlay hidden">
+    <div class="settings-content">
+
+      <div id="settingsCloseX" class="settings-close-x">✕</div>
+      <h2>Cassette DSP Settings</h2>
+
+      <!-- BASE SETTINGS -->
+      <div class="settings-section">
+        <h3>Settings 1</h3>
+       
+        <div class="slider-group">
+          <label>Hiss
+            <input type="range" id="hissSlider" min="0" max="1" step="0.01" value="0.3" />
+          </label>
+
+          <label>Saturation
+            <input type="range" id="saturationSlider" min="0" max="1" step="0.01" value="0.5" />
+          </label>
+
+          <label>Wow & Flutter
+            <input type="range" id="wowFlutterSlider" min="0" max="1" step="0.01" value="0.25" />
+          </label>
+
+          <label>Soft Bass
+            <input type="range" id="softBassSlider" min="0" max="1" step="0.01" value="0.5" />
+          </label>
+
+          <label>Tone
+            <input type="range" id="toneSlider" min="0" max="1" step="0.01" value="0.4" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Settings 2 -->
+      <div class="settings-section">
+        <h3>
+          <input type="checkbox" id="settings2DSP" />
+          Settings 2
+        </h3>
+
+        <div class="slider-group">
+          <label>High Bass
+            <input type="range" id="settings2HighBassSlider" min="0" max="1" step="0.01" value="0.6" />
+          </label>
+
+          <label>Presence
+            <input type="range" id="settings2PresenceSlider" min="0" max="1" step="0.01" value="0.4" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Settings 3 -->
+      <div class="settings-section">
+        <h3>
+          <input type="checkbox" id="settings3DSP" />
+          Settings 3
+        </h3>
+
+        <div class="slider-group">
+          <label>Low Bass
+            <input type="range" id="settings3LowBassSlider" min="0" max="1" step="0.01" value="0.7" />
+          </label>
+
+          <label>Punch
+            <input type="range" id="settings3PunchSlider" min="0" max="1" step="0.01" value="0.5" />
+          </label>
+
+          <label>Tone
+            <input type="range" id="settings3BodyBoostSlider" min="0" max="1" step="0.01" value="0.5" />
+          </label>
+        </div>
+      </div>
+
+      <!-- SETTINGS ACTION BUTTONS -->
+      <div class="settings-actions">
+        <button id="settingsDownloadBottom" class="settings-btn">Download settings</button>
+        <button id="settingsLoadOpen" class="settings-btn">Load settings</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SETTINGS LOAD OVERLAY -->
+  <div id="settingsLoadOverlay" class="settings-overlay hidden">
+    <div class="settings-content">
+
+      <div id="settingsLoadCloseX" class="settings-close-x">✕</div>
+      <h2>Load Settings</h2>
+
+      <select id="settingsDSPList" size="8"></select>
+
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="cassette.dsp.js"></script>
+  <script src="cassette.ui.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

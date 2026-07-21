@@ -1,0 +1,19 @@
+{
+  "baseParams": {
+    "hiss": 0.02,
+    "saturation": 0.38,
+    "wowFlutter": 0.68,
+    "softBass": 0.51,
+    "tone": 0.49
+  },
+  "walkmanParams": {
+    "highBass": 1,
+    "presence": 0.25
+  },
+  "boomboxParams": {
+    "lowBass": 0.7,
+    "punch": 0.5,
+    "bodyBoost": 0.5,
+    "tone": 0.5
+  }
+}

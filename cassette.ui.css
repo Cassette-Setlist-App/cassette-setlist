@@ -1,0 +1,167 @@
+/* ------------------------------------------------------------
+   CASSETTE PANEL
+------------------------------------------------------------ */
+.cassette-panel {
+  width: 340px;
+  background: #0a0a0f;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #222;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+}
+
+/* ------------------------------------------------------------
+   CASSETTE BODY
+------------------------------------------------------------ */
+.cassette-body {
+  width: 300px;
+  height: 180px;
+  background: linear-gradient(135deg, #111, #1a1a1f);
+  border-radius: 14px;
+  border: 2px solid #333;
+  box-shadow: inset 0 0 20px rgba(0,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+/* ------------------------------------------------------------
+   CASSETTE WINDOW
+------------------------------------------------------------ */
+.cassette-window {
+  flex: 1;
+  background: #0f0f14;
+  border-radius: 10px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0,255,255,0.1);
+}
+
+/* ------------------------------------------------------------
+   GEAR
+------------------------------------------------------------ */
+.gear {
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+.gear-inner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c0c0c0, #888);
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ------------------------------------------------------------
+   TAPE RING (SURROUNDING THE GEAR)
+------------------------------------------------------------ */
+.tape {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+
+  transform: translate(-50%, -50%) scale(var(--tape-scale, 0));
+
+  background:
+    radial-gradient(circle, #2a2a2a 0%, #1c1c1c 60%, #111 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 2px,
+      rgba(0,0,0,0.15) 4px
+    );
+
+  border: 12px solid #222;
+
+  box-shadow:
+    inset 0 0 35px rgba(0,0,0,0.9),
+    inset 0 0 50px rgba(255,255,255,0.18);
+
+  z-index: 5;
+  transition: transform 0.25s linear, box-shadow 0.25s linear;
+}
+
+/* ------------------------------------------------------------
+   ROTATION ANIMATION — FIXED
+------------------------------------------------------------ */
+.gear-spinning .tape {
+  animation: spinTape 1.2s linear infinite;
+}
+
+@keyframes spinTape {
+  from { transform: translate(-50%, -50%) scale(var(--tape-scale)) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) scale(var(--tape-scale)) rotate(360deg); }
+}
+
+/* ------------------------------------------------------------
+   TAPE LIGHT WHEN PLAYING
+------------------------------------------------------------ */
+.tape-lit {
+  box-shadow:
+    inset 0 0 35px rgba(0,0,0,0.9),
+    inset 0 0 50px rgba(255,255,255,0.25),
+    0 0 18px rgba(0,255,255,0.4);
+}
+
+/* ------------------------------------------------------------
+   ROTATION ANIMATION
+------------------------------------------------------------ */
+.gear-spinning .gear-inner {
+  animation: spinGear 1.2s linear infinite;
+}
+
+.gear-spinning .tape {
+  animation: spinTape 1.2s linear infinite;
+}
+
+@keyframes spinGear {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spinTape {
+  from { transform: translate(-50%, -50%) rotate(0deg) scale(var(--tape-scale)); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) scale(var(--tape-scale)); }
+}
+
+/* ------------------------------------------------------------
+   CASSETTE CONTROLS
+------------------------------------------------------------ */
+.cassette-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cassette-controls button {
+  background: #111;
+  color: #0ff;
+  border: 1px solid #0ff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cassette-controls button:hover {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 10px #0ff;
+}
